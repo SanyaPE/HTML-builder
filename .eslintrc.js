@@ -16,4 +16,10 @@ module.exports = {
     'prettier/prettier': 'error',
   },
   ignorePatterns: ['03-files-in-folder/secret-folder/**/*.js'],
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ]
 };

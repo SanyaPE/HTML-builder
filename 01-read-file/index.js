@@ -1,11 +1,8 @@
-const { open } = require('node:fs/promises');
+const { createReadStream } = require('fs');
 const path = require('path');
 let filePath = path.join(__dirname, 'text.txt');
 
 (async () => {
-  const file = await open(filePath)
-  const stream = file.createReadStream();
-  stream.on('data', function (chunk) {
-    console.log(chunk.toString());
-  });
+  const stream = createReadStream(filePath, 'utf8');
+  stream.pipe(process.stdout);
 })();
